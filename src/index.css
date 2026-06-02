@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #FFF8E7;
+  --color-bg-secondary: #FFF0D0;
+  --color-bg-card: #FFFFFF;
+  --color-bg-input: #FFFFFF;
+  --color-border: #E8DCC8;
+  --color-border-focus: #D97706;
+  --color-electric: #D97706;
+  --color-electric-dim: #B45309;
+  --color-power: #2563EB;
+  --color-amber: #B45309;
+  --color-danger: #DC2626;
+  --color-text-primary: #2D2420;
+  --color-text-secondary: #5C4D44;
+  --color-text-muted: #A89888;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  font-family: 'Noto Sans SC', system-ui, sans-serif;
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Font utilities */
+.font-display {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-mono-data {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Subtle glow utilities */
+.glow-electric {
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.08);
+}
+
+.glow-power {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.08);
+}
+
+.glow-amber {
+  box-shadow: 0 0 20px rgba(180, 83, 9, 0.08);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Range slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: var(--color-border);
+  border-radius: 999px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--color-electric);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.35);
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 2px 12px rgba(217, 119, 6, 0.5);
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* Card */
+.glass-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(45, 36, 32, 0.04);
+}
